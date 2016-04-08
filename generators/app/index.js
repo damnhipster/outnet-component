@@ -8,12 +8,19 @@ module.exports = generators.Base.extend({
       required: true
     });
     this.sourceRoot('generators/app/template/outnet-vanilla-component');
+    this.repo = 'git@github.com:damnhipster/'+this.componentName
   },
   writing: function () {
-    this.fs.copyTpl(
-      this.templatePath('/.*/g'),
-      this.destinationPath(this.componentName),
-      { title: 'Templating with Yeoman' }
+    this.fs.copy(
+      this.templatePath('**/*.*'),
+      this.destinationPath(this.componentName)
     );
+  },
+  git: function() {
+    this.spawnCommandSync('git', ['init']);
+    this.spawnCommandSync('git', ['remote', 'add', 'origin', this.repo]);
+    this.spawnCommandSync('git', ['add', '--all']);
+    this.spawnCommandSync('git', ['commit', '-m', '"initial commit from generator"']);
+    this.spawnCommandSync('git', ['push', '-u', 'origin', 'master']);
   }
 });
