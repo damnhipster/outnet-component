@@ -1,5 +1,0 @@
-@mixin safari_only {
-  @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
-    @content;
-  }
-}
