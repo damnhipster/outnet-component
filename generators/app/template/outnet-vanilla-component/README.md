@@ -2,6 +2,10 @@
 
 Some helpful description and instructions on how to use (such as API).
 
+##Demo
+
+Go to [the demo page](http://damnhipster.github.io/my-component)
+
 ##Dependencies
 - bower
 

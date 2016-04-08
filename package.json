@@ -12,11 +12,14 @@
     "node": "^0.12.7"
   },
   "dependencies": {
+    "github-api": "^0.11.2",
     "yeoman-generator": "^0.22.5"
   },
   "files": [
     "generators/app",
     "generators/polymer",
+    "generators/angular",
+    "generators/ember",
     "generators/react"
   ]
 }
