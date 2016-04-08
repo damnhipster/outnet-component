@@ -1,0 +1,20 @@
+{
+  "name": "test-component",
+  "authors": [
+    "Hem Brahmbhatt <hamant.brahmbhatt@net-a-porter.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "outnet-2015": "^1.2.7"
+  }
+}

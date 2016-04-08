@@ -1,0 +1,52 @@
+@import '../mixins/base';
+@import '../mixins/browser';
+@import 'mixins';
+
+%icon {
+  content: "";
+  display: block;
+  background-image: url("../images/icons.png");
+  background-image: none, url("../images/icons.svg");
+  background-repeat: no-repeat;
+  @include _square(map_get($spriteDimensions, "iconDimension"));
+  margin: -1px 0 0 0;
+  background-size: 110%;
+}
+
+@each $colour in $iconColours {
+  @include create_icons($colour) {
+    @extend %icon;
+  };
+}
+
+@include viewport(mobile) {
+  @each $colour in $iconColours {
+    @include create_icons($colour) {
+      margin-top: -1px;
+      @include _square(14px);
+    }
+  }
+}
+
+// hacky overrides
+.icon-arrow-right-lrg-black, .icon-arrow-left-lrg-black, .icon-arrow-right-lrg-grey, .icon-arrow-left-lrg-grey {
+  &:before {
+    height:17px;
+    width:17px;
+  }
+}
+
+@include safari_only {
+  .icon-arrow-right-lrg-black:before {
+    background-position-y: 72.7%;
+  }
+  .icon-arrow-left-lrg-black:before {
+    background-position-y: 78%;
+  }
+  .icon-arrow-right-lrg-grey:before {
+    background-position-y: 83.5%;
+  }
+  .icon-arrow-left-lrg-grey:before {
+    background-position-y: 88.7%;
+  }
+}

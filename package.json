@@ -1,0 +1,22 @@
+{
+  "name": "generator-outnet-component",
+  "version": "0.0.1",
+  "description": "Scaffold for Outnet JS components",
+  "main": "index.js",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "^0.12.7"
+  },
+  "dependencies": {
+    "yeoman-generator": "^0.22.5"
+  },
+  "files": [
+    "generators/app",
+    "generators/polymer",
+    "generators/react"
+  ]
+}
